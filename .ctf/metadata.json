@@ -4,11 +4,5 @@
   "question": "Retrieve the flag from the challenge service.",
   "category": "PWN",
   "difficulty": 4,
-  "evidence_kind": "SECRET",
-  "capabilities": [
-    "memory-corruption",
-    "binary-exploitation",
-    "custom-file-format",
-    "c"
-  ]
+  "evidence_kind": "SECRET"
 }
