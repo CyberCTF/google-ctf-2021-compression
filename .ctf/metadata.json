@@ -3,6 +3,6 @@
   "description": "A demo server for a custom compression format: compress a string, decompress one, or read the format documentation if you know its password.",
   "question": "Retrieve the flag from the challenge service.",
   "category": "PWN",
-  "difficulty": 4,
+  "difficulty": 3,
   "evidence_kind": "SECRET"
 }
