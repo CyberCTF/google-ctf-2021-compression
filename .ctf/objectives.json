@@ -1,0 +1,73 @@
+{
+  "objectives": [
+    {
+      "key": "main",
+      "title": "Read the flag",
+      "prompt": "Get code execution through the decompressor and read /flag inside the challenge's sandbox.",
+      "check": {
+        "evidence": "SECRET",
+        "format": "CTF{%s}"
+      },
+      "dev": "CTF{dev-google-ctf-2021-compression}",
+      "hints": [
+        "The compressor shows you the format: study how a back-reference is encoded.",
+        "Ask what the decompressor checks, and does not check, when it copies a back-reference."
+      ],
+      "steps": [
+        {
+          "key": "family",
+          "title": "Name the compression family",
+          "prompt": "Which classic compression family do the format's back-references come from? (name)",
+          "check": {
+            "answer": [
+              "lz77",
+              "lz",
+              "lempel-ziv",
+              "lempel ziv",
+              "lzss"
+            ]
+          }
+        },
+        {
+          "key": "region",
+          "title": "Find the buffers",
+          "prompt": "In which memory region do the decompressor's buffers live?",
+          "check": {
+            "answer": [
+              "stack",
+              "the stack"
+            ]
+          }
+        },
+        {
+          "key": "bug",
+          "title": "Name the bug",
+          "prompt": "What memory-safety bug class does an unchecked back-reference cause?",
+          "check": {
+            "answer": [
+              "out-of-bounds",
+              "out of bounds",
+              "oob",
+              "out-of-bounds read",
+              "out-of-bounds write",
+              "buffer overflow",
+              "stack buffer overflow"
+            ]
+          }
+        },
+        {
+          "key": "technique",
+          "title": "Name the technique",
+          "prompt": "Which code-reuse technique turns control of the stack into execution? (acronym)",
+          "check": {
+            "answer": [
+              "rop",
+              "return-oriented programming",
+              "return oriented programming"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
